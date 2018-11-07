@@ -1,0 +1,26 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yu-sir/typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yu-sir/typescript/issues"
+  },
+  "homepage": "https://github.com/yu-sir/typescript#readme",
+  "dependencies": {
+    "@types/lodash": "^4.14.117",
+    "@types/react": "^16.4.18"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.22"
+  }
+}
