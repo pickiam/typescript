@@ -1,3 +1,5 @@
+import { func } from "prop-types";
+
 // boolean
 let isDone: boolean = false;
 
@@ -54,3 +56,37 @@ let uuu: void;
 
 let nnnum: number = uuu; // 报错
 
+// 默认情况下null和undefined是所有类型的子类型。 就是说你可以把null和undefined赋值给number类型的变量。
+// 然而，当你指定了--strictNullChecks标记，null和undefined只能赋值给void和它们各自。 这能避免很多常见的问题。 也许在某处你想传入一个string或null或undefined，你可以使用联合类型string | null | undefined。
+
+// never 
+
+// never类型表示那些永不存在值的类型。 nerver类型是任何类型的子类型，可以赋值该任何类型，然而没有类型是never的子类型或可以赋值给never类型
+
+// 返回never的函数必须存在无法到达的终点
+function error (message: string): never {
+    throw new Error(message)
+}
+// 推断返回的类型为never
+function fail (): never {
+    return error('something failed')
+}
+
+// 返回never的函数必须存在无法达到的终点
+function infiniteLoop(): never {
+    while (true) {
+
+    }
+}
+
+// object表示非原始类型，也就是除number，string，boolean，symbol，null或undefined之外的类型。使用object类型，就可以更好的表示像Object.create这样的API。例如
+
+declare function create(o: object | null): void;
+
+create({ prop: 0 }); // OK
+create(null); // OK
+
+create(42); // Error
+create("string"); // Error
+create(false); // Error
+create(undefined); // Error
